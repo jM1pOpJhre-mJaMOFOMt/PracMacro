@@ -1,5 +1,6 @@
 package com.nur.pracmacro;
 
+import net.minecraftforge.common.MinecraftForge;
 import net.minecraftforge.fml.common.Mod;
 import net.minecraftforge.fml.common.Mod.EventHandler;
 import net.minecraftforge.fml.common.event.FMLInitializationEvent;
@@ -13,5 +14,7 @@ public class PracMacroMod
     @EventHandler
     public void init(FMLInitializationEvent event)
     {
+        Keybinds.register();
+        MinecraftForge.EVENT_BUS.register(new KeyPressHandler());
     }
 }
